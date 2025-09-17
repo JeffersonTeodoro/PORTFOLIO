@@ -7,7 +7,8 @@ Aqui você encontra meus projetos, habilidades e cursos de programação e tecno
 
 ## 🎥 Demonstração
 
-![Demonstração do Portfólio](assets/Gravando2025-09-17194254.mp4)
+<video src="assets/Gravando2025-09-17194254.mp4" controls autoplay loop muted width="900"></video>
+
 
 ---
 
