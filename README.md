@@ -7,7 +7,7 @@ Aqui você encontra meus projetos, habilidades e cursos de programação e tecno
 
 ## 🎥 Demonstração
 
-<video src="assets/Gravando2025-09-17194254.mp4" controls autoplay loop muted width="900"></video>
+![Demonstração do Portfólio](assets/preview.gif)
 
 
 ---
@@ -50,5 +50,5 @@ Aqui você encontra meus projetos, habilidades e cursos de programação e tecno
 ---
 
 📧 Contato: **jeffersonfranca199@gmail.com**  
-💼 LinkedIn: [linkedin.com/in/jeffersont](#)  
+💼 LinkedIn: [linkedin.com/in/jeffersont](https://www.linkedin.com/in/jefferson-fran%C3%A7a-teodoro-6258ba215/)  
 🐙 GitHub: [github.com/JeffersonTeodoro](https://github.com/JeffersonTeodoro)
