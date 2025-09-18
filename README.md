@@ -7,7 +7,7 @@ Aqui você encontra meus projetos, habilidades e cursos de programação e tecno
 
 ## 🎥 Demonstração
 
-![Demonstração do Portfólio](assets/preview.gif)
+[Demonstração do Portfólio](assets/preview.gif)
 
 
 ---
