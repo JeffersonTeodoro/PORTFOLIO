@@ -44,7 +44,7 @@ Aqui você encontra meus projetos, habilidades e cursos de programação e tecno
 ---
 
 ## 🌎 Acesse meu Portfólio Online
-🔗 [Clique aqui para visualizar](https://jeffersonteodoro.github.io/meu-portfolio/)
+🔗 [Clique aqui para visualizar](https://jeffersonteodoro.github.io/PORTFOLIO/)
 
 ---
 
