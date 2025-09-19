@@ -5,7 +5,7 @@ body { font-family: 'Roboto', sans-serif; line-height: 1.6; background-color: #f
 /* Navbar */
 header {
     background-color: rgba(30,30,30,0.9);
-    color: #fff;
+    color: #0077b6;
     padding: 15px 0;
     position: sticky;
     top: 0;
