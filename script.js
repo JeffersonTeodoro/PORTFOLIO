@@ -53,3 +53,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById('menu-btn');
+  const navList = document.getElementById('nav-list');
+
+  // Abre/fecha menu ao clicar
+  menuBtn.addEventListener('click', () => {
+    navList.classList.toggle('show');
+  });
+
+  // Fecha o menu ao clicar em um link
+  navList.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navList.classList.remove('show');
+    });
+  });
+});

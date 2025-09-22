@@ -49,11 +49,54 @@ header nav ul li a:hover {
 /* Menu Hamburger */
 .menu-btn {
   display: none;
-  font-size: 1.5rem;
   background: none;
   border: none;
-  color: #00d9ff;
+  color: #0077b6;
+  font-size: 1.2rem;
   cursor: pointer;
+}
+/* Esconde o menu no mobile */
+#nav-list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+/* Modo responsivo */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  #nav-list {
+    display: none; /* escondido por padrão */
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  #nav-list.show {
+    display: flex; /* só aparece quando clicar */
+  }
+
+  #nav-list li {
+    margin: 10px 0;
+  }
+
+  #nav-list li a {
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+
+  #nav-list li a:hover {
+    color: #00d9ff;
+  }
 }
 
 /* ====== HERO ====== */
