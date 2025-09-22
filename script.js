@@ -20,11 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const observer = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
-        if(entry.isIntersecting) {
+        if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
       });
-    }, 
+    },
     { threshold: 0.1 }
   );
 
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ====== NAVBAR SCROLL ======
   window.addEventListener('scroll', () => {
-    if(window.scrollY > 50) {
+    if (window.scrollY > 50) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
@@ -41,31 +41,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ====== SMOOTH SCROLL ======
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
-      if(target) {
+      if (target) {
         target.scrollIntoView({
           behavior: 'smooth',
           block: 'start'
         });
       }
-    });
-  });
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const menuBtn = document.getElementById('menu-btn');
-  const navList = document.getElementById('nav-list');
-
-  // Abre/fecha menu ao clicar
-  menuBtn.addEventListener('click', () => {
-    navList.classList.toggle('show');
-  });
-
-  // Fecha o menu ao clicar em um link
-  navList.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navList.classList.remove('show');
     });
   });
 });
