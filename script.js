@@ -1,41 +1,55 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll('section');
-    const header = document.querySelector('header');
-    const floatingButtons = document.querySelectorAll('.floating-btn');
-    const heroButton = document.querySelector('.btn-hero');
+  const sections = document.querySelectorAll('section');
+  const header = document.querySelector('header');
+  const menuBtn = document.getElementById('menu-btn');
+  const navList = document.getElementById('nav-list');
 
-    function animateSections() {
-        const triggerBottom = window.innerHeight * 0.85;
-        sections.forEach(section => {
-            const top = section.getBoundingClientRect().top;
-            if(top < triggerBottom){
-                section.classList.add('visible');
-            }
-        });
-        if(window.scrollY > 50){
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+  // ====== MENU MOBILE ======
+  menuBtn.addEventListener('click', () => {
+    navList.classList.toggle('show');
+  });
+
+  // Fecha menu quando clica em um link
+  navList.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navList.classList.remove('show');
+    });
+  });
+
+  // ====== SCROLL PARA SEÇÕES ======
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('visible');
         }
+      });
+    }, 
+    { threshold: 0.1 }
+  );
+
+  sections.forEach(section => observer.observe(section));
+
+  // ====== NAVBAR SCROLL ======
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
     }
+  });
 
-    window.addEventListener('scroll', animateSections);
-    animateSections();
-
-    heroButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = document.querySelector(heroButton.getAttribute('href'));
-        target.scrollIntoView({ behavior: 'smooth' });
-    });
-
-    floatingButtons.forEach(btn => {
-        btn.addEventListener('mouseenter', () => {
-            btn.style.transform = 'translateY(-5px)';
-            btn.style.boxShadow = '0 5px 15px rgba(0,0,0,0.3)';
+  // ====== SMOOTH SCROLL ======
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if(target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
         });
-        btn.addEventListener('mouseleave', () => {
-            btn.style.transform = 'translateY(0)';
-            btn.style.boxShadow = '0 0 0 rgba(0,0,0,0)';
-        });
+      }
     });
+  });
 });

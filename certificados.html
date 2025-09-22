@@ -9,49 +9,64 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
+  <!-- Cabeçalho com menu -->
   <header>
     <nav>
       <h1>Jefferson F. Teodoro</h1>
-      <ul>
+
+      <!-- Botão hambúrguer -->
+      <button class="menu-btn" id="menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Links -->
+      <ul id="nav-list">
         <li><a href="index.html#hero">Home</a></li>
         <li><a href="index.html#sobre">Sobre</a></li>
         <li><a href="index.html#Competencias">Competências</a></li>
         <li><a href="index.html#projetos">Projetos</a></li>
         <li><a href="index.html#contato">Contato</a></li>
         <li><a href="index.html#cursos">Cursos</a></li>
-        <li><a href="certificados.html">Certificados</a></li>
+        <li><a href="certificados.html" class="active">Certificados</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- Seção Certificados -->
   <section id="certificados">
     <div class="container">
       <h2>Meus Certificados</h2>
       <div class="certificados-grid">
+        
+        <!-- Certificado 1 -->
         <div class="certificado-card">
-          <img src="assets/certificados/certificado1.jpg" alt="Certificado 1">
+          <img src="assets/certificados/certificado1.jpg" alt="Certificado Engenharia de Software">
           <p>Engenharia de Software</p>
         </div>
 
+        <!-- Certificado 2 -->
         <div class="certificado-card">
-          <img src="assets/certificados/certificado2.jpg" alt="Certificado 2">
-          <p> Desenvolvedor de Aplicativos para Android e iOS com React Native</p>
+          <img src="assets/certificados/certificado2.jpg" alt="Certificado React Native">
+          <p>Desenvolvedor de Aplicativos para Android e iOS com React Native</p>
         </div>
 
+        <!-- Certificado 3 -->
         <div class="certificado-card">
-          <img src="assets/certificados/certificado3.jpg" alt="Certificado 3">
-          <p>Java e IA para iniciantes com a NTT DATA</p>
+          <img src="assets/certificados/certificado3.jpg" alt="Certificado Java e IA">
+          <p>Java e IA para Iniciantes com a NTT DATA</p>
         </div>
 
-        <!-- Você pode adicionar quantos quiser -->
       </div>
     </div>
   </section>
 
+  <!-- Rodapé -->
   <footer>
     <p>&copy; 2025 Jefferson F. Teodoro. Todos os direitos reservados.</p>
   </footer>
 
+  <!-- Script menu e scroll -->
   <script src="script.js"></script>
 </body>
 </html>
+
