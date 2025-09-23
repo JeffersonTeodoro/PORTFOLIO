@@ -392,3 +392,59 @@ footer {
   form input, form textarea, form button { width: 100%; }
   .contato-info { font-size: 0.9rem; }
 }
+/* ====== LIGHTBOX ====== */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.lightbox.active {
+  display: flex;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.lightbox img {
+  max-width: 95%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+  transform: scale(0.8);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.lightbox.active img {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Botões */
+.lightbox-close, .lightbox-prev, .lightbox-next {
+  position: absolute;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.lightbox-close { top: 20px; right: 30px; }
+.lightbox-prev { left: 40px; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: 40px; top: 50%; transform: translateY(-50%); }
+
+.lightbox-close:hover, 
+.lightbox-prev:hover, 
+.lightbox-next:hover {
+  color: #00d9ff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

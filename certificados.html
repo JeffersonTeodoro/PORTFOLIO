@@ -9,13 +9,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
-  <!-- Cabeçalho com menu -->
+  <!-- ====== HEADER ====== -->
   <header>
-    <nav>Jefferson França Teodoro</nav>
+    <nav>
+      <h1 class="logo">Jefferson França Teodoro</h1>
 
       <!-- Botão menu -->
       <button class="menu-btn" id="menu-btn">
-        <i class="fas fa-bars"></i> Menu
+        <i class="fas fa-bars"></i>
       </button>
 
       <!-- Links -->
@@ -31,97 +32,103 @@
     </nav>
   </header>
 
-  <!-- Seção Certificados -->
+  <!-- ====== CERTIFICADOS ====== -->
   <section id="certificados">
     <div class="container">
-      <h2>Meus Certificados</h2>
+      <h2>📜 Meus Certificados</h2>
+      <p class="subtitulo">Aqui estão algumas conquistas da minha jornada de aprendizado.</p>
+
       <div class="certificados-grid">
-        
-        <!-- Certificado 1 -->
         <div class="certificado-card">
-          <img src="assets/certificados/certificado1.jpg" alt="Certificado Engenharia de Software">
-          <p>Engenharia de Software</p>
+          <img src="assets/certificados/certificado1.jpg" alt="Certificado 1" class="cert-img">
+          <h3>Engenharia de Software</h3>
         </div>
-
-        <!-- Certificado 2 -->
         <div class="certificado-card">
-          <img src="assets/certificados/certificado2.jpg" alt="Certificado React Native">
-          <p>Desenvolvedor de Aplicativos para Android e iOS com React Native</p>
+          <img src="assets/certificados/certificado2.jpg" alt="Certificado 2" class="cert-img">
+          <h3>React Native Avançado</h3>
         </div>
-
-        <!-- Certificado 3 -->
         <div class="certificado-card">
-          <img src="assets/certificados/certificado3.jpg" alt="Certificado Java e IA">
-          <p>Java e IA para Iniciantes com a NTT DATA</p>
+          <img src="assets/certificados/certificado3.jpg" alt="Certificado 3" class="cert-img">
+          <h3>Java & Inteligência Artificial</h3>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Rodapé -->
+  <!-- ====== LIGHTBOX ====== -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <span class="lightbox-prev">&#10094;</span>
+    <img id="lightbox-img" src="" alt="">
+    <span class="lightbox-next">&#10095;</span>
+  </div>
+
+  <!-- ====== FOOTER ====== -->
   <footer>
     <p>&copy; 2025 Jefferson França Teodoro. Todos os direitos reservados.</p>
   </footer>
 
-  <!-- Script -->
+  <!-- ====== SCRIPT ====== -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const sections = document.querySelectorAll('section');
       const header = document.querySelector('header');
       const menuBtn = document.getElementById('menu-btn');
       const navList = document.getElementById('nav-list');
+      const certImages = document.querySelectorAll('.cert-img');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const closeBtn = document.querySelector('.lightbox-close');
+      const prevBtn = document.querySelector('.lightbox-prev');
+      const nextBtn = document.querySelector('.lightbox-next');
+      let currentIndex = 0;
 
       // ====== MENU MOBILE ======
-      menuBtn.addEventListener('click', () => {
-        navList.classList.toggle('show');
-      });
-
-      // Fecha menu quando clica em um link
+      menuBtn.addEventListener('click', () => navList.classList.toggle('show'));
       navList.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          navList.classList.remove('show');
-        });
+        link.addEventListener('click', () => navList.classList.remove('show'));
       });
 
-      // ====== SCROLL PARA SEÇÕES ======
-      const observer = new IntersectionObserver(
-        entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-
+      // ====== SCROLL ANIMAÇÃO ======
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.1 });
       sections.forEach(section => observer.observe(section));
 
       // ====== NAVBAR SCROLL ======
       window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
+        header.classList.toggle('scrolled', window.scrollY > 50);
       });
 
-      // ====== SMOOTH SCROLL ======
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
+      // ====== LIGHTBOX ======
+      function showImage() {
+        lightboxImg.src = certImages[currentIndex].src;
+        lightbox.classList.add('active');
+      }
+      certImages.forEach((img, index) => {
+        img.addEventListener('click', () => {
+          currentIndex = index;
+          showImage();
         });
       });
+      closeBtn.addEventListener('click', () => lightbox.classList.remove('active'));
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + certImages.length) % certImages.length;
+        showImage();
+      });
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % certImages.length;
+        showImage();
+      });
     });
+      function showImage() {
+      lightboxImg.src = certImages[currentIndex].src;
+      lightboxImg.alt = certImages[currentIndex].alt;
+      lightbox.classList.add('active');
+       }
+
   </script>
 </body>
 </html>
-
