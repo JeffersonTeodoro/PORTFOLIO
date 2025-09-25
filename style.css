@@ -7,15 +7,15 @@
 body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
-  background-color: #f5f5f5;
-  color: #333;
+  background-color: #0a0a0a; /* fundo mais escuro */
+  color: #e0e0e0;
   scroll-behavior: smooth;
 }
 
 /* ====== NAVBAR ====== */
 header {
-  background-color: rgba(30,30,30,0.9);
-  color: #0077b6;
+  background: rgba(10,10,10,0.9);
+  color: #00d9ff;
   padding: 15px 0;
   position: sticky;
   top: 0;
@@ -23,7 +23,7 @@ header {
   transition: background 0.3s;
 }
 header.scrolled {
-  background-color: #1e1e1e;
+  background: #111;
 }
 header nav {
   display: flex;
@@ -41,35 +41,32 @@ header nav ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
+  transition: 0.3s;
 }
 header nav ul li a:hover {
-  color: #0077b6;
+  color: #00d9ff;
 }
 
-/* Menu Hamburger */
+/* ====== MENU MOBILE ====== */
 .menu-btn {
   display: none;
   background: none;
   border: none;
-  color: #0077b6;
-  font-size: 1.2rem;
+  color: #fff;
+  font-size: 1.5rem;
   cursor: pointer;
 }
-/* Esconde o menu no mobile */
 #nav-list {
   display: flex;
   gap: 20px;
   list-style: none;
 }
-
-/* Modo responsivo */
 @media (max-width: 768px) {
   .menu-btn {
     display: block;
   }
-
   #nav-list {
-    display: none; /* escondido por padrão */
+    display: none;
     flex-direction: column;
     background: #111;
     position: absolute;
@@ -79,30 +76,21 @@ header nav ul li a:hover {
     padding: 15px;
     border-radius: 8px;
   }
-
   #nav-list.show {
-    display: flex; /* só aparece quando clicar */
+    display: flex;
   }
-
-  #nav-list li {
-    margin: 10px 0;
-  }
-
   #nav-list li a {
-    color: #fff;
-    font-size: 1rem;
-    text-decoration: none;
+    color: #f4f4f4;
   }
-
   #nav-list li a:hover {
-    color: #0077b6;
+    color: #00d9ff;
   }
 }
 
 /* ====== HERO ====== */
 #hero {
   height: 100vh;
-  background: linear-gradient(rgba(30,30,30,0.8), rgba(30,30,30,0.6)), url('assets/banner.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(10,10,10,0.8), rgba(10,10,10,0.6)), url('assets/banner.jpg') center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,15 +107,16 @@ header nav ul li a:hover {
 }
 .btn-hero {
   padding: 12px 30px;
-  background-color: #0077b6;
+  background: linear-gradient(90deg, #7b00ff, #00d9ff);
   color: #fff;
   text-decoration: none;
   font-weight: bold;
   border-radius: 5px;
-  transition: background 0.3s;
+  transition: 0.3s;
 }
 .btn-hero:hover {
-  background-color: #0077b6;
+  background: linear-gradient(90deg, #00ff9d, #ff00c8);
+  color: #0a0a0a;
 }
 
 /* ====== SECTIONS ====== */
@@ -149,10 +138,11 @@ section.visible {
 h2 {
   text-align: center;
   margin-bottom: 40px;
-  color: #1e1e1e;
+  color: #fff;
+  font-size: 2rem;
 }
 
-/* ====== SKILLS ====== */
+/* ====== COMPETÊNCIAS ====== */
 .Competencias-grid {
   display: flex;
   justify-content: center;
@@ -160,21 +150,22 @@ h2 {
   flex-wrap: wrap;
 }
 .Competencias-card {
-  background-color: #fff;
+  background: #111;
   padding: 20px;
   width: 120px;
   text-align: center;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
   transition: transform 0.3s;
 }
 .Competencias-card i {
   font-size: 40px;
-  color: #0077b6;
+  color: #00d9ff;
   margin-bottom: 10px;
 }
 .Competencias-card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.6);
 }
 
 /* ====== PROJETOS ====== */
@@ -184,113 +175,91 @@ h2 {
   gap: 20px;
 }
 .projeto-card {
-  background-color: #fff;
+  background: #111;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .projeto-card img {
   width: 100%;
-  max-width: 300px;
   height: 180px;
   object-fit: cover;
   border-radius: 10px;
-  margin: 0 auto 10px auto;
-  display: block;
+  margin-bottom: 10px;
 }
 .projeto-card a {
   display: inline-block;
   margin-top: 10px;
   padding: 8px 16px;
-  background-color: #0077b6;
+  background: linear-gradient(90deg, #00d9ff, #7b00ff);
   color: #fff;
-  text-decoration: none;
   border-radius: 4px;
+  text-decoration: none;
 }
 .projeto-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.6);
 }
 .projeto-card a:hover {
-  background-color: #0077b6;
+  background: linear-gradient(90deg, #00ff9d, #ff00c8);
+  color: #0a0a0a;
 }
 
 /* ====== CURSOS ====== */
-#cursos {
-  padding: 50px 20px;
-  text-align: center;
-}
 .cursos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  margin-top: 20px;
 }
 .curso-card {
-  background: #fff;
+  background: #111;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.curso-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-.curso-card h3 {
-  margin-bottom: 10px;
-  color: #0077b6;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
 }
 .curso-card i {
   font-size: 40px;
-  color: #0077b6;
+  color: #00d9ff;
   margin-bottom: 10px;
-  display: block;
+}
+.curso-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+}
+.curso-card h3 {
+  color: #fff;
 }
 
 /* ====== CERTIFICADOS ====== */
-#certificados {
-  padding: 60px 20px;
-  text-align: center;
-  background: #f9f9f9;
-}
-#certificados h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #0077b6;
-}
 .certificados-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
-  justify-content: center;
-  align-items: start;
 }
 .certificado-card {
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  background: #111;
+  border-radius: 12px;
   padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
 }
 .certificado-card img {
   width: 100%;
-  height: auto;
   border-radius: 10px;
   margin-bottom: 15px;
-  object-fit: cover;
-  max-height: 300px;
 }
 .certificado-card p {
-  font-size: 1.1rem;
+  color: #00d9ff;
   font-weight: bold;
-  color: #333;
 }
 .certificado-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
 }
 
 /* ====== CONTATO ====== */
@@ -304,25 +273,23 @@ form {
 form input, form textarea {
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #ccc;
-  resize: none;
+  border: 1px solid #00d9ff;
+  background: #0f0f0f;
+  color: #fff;
 }
 form button {
-  padding: 10px;
+  padding: 12px;
   border: none;
-  background-color: #0077b6;
+  background: linear-gradient(90deg, #7b00ff, #00d9ff);
   color: #fff;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: 0.3s;
 }
 form button:hover {
-  background-color: #0077b6;
-}
-.contato-info {
-  text-align: center;
-  margin-top: 20px;
+  background: linear-gradient(90deg, #00ff9d, #ff00c8);
+  color: #0a0a0a;
 }
 
 /* ====== BOTÕES FLUTUANTES ====== */
@@ -347,51 +314,16 @@ form button:hover {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .floating-btn.whatsapp { background-color: #25D366; }
-.floating-btn.linkedin { background-color: #0077b5; }
+.floating-btn.linkedin { background: linear-gradient(90deg, #7b00ff, #00d9ff); }
 
 /* ====== FOOTER ====== */
 footer {
   text-align: center;
   padding: 20px 0;
-  background-color: #1e1e1e;
+  background: #111;
   color: #fff;
 }
 
-/* ====== RESPONSIVIDADE ====== */
-@media (max-width: 992px) {
-  .hero-container h1 { font-size: 2rem; }
-  .hero-container p { font-size: 1rem; }
-  .projetos-grid,
-  .cursos-grid,
-  .Competencias-grid,
-  .certificados-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  }
-}
-@media (max-width: 600px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-    background: #111;
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    width: 160px;
-    padding: 10px;
-    border-radius: 8px;
-  }
-  nav ul.show {
-    display: flex;
-  }
-  .menu-btn { display: block; }
-  .hero-container h1 { font-size: 1.6rem; }
-  .hero-container p { font-size: 0.95rem; }
-  .btn-hero { padding: 10px 18px; font-size: 0.9rem; }
-  form input, form textarea, form button { width: 100%; }
-  .contato-info { font-size: 0.9rem; }
-}
 /* ====== LIGHTBOX ====== */
 .lightbox {
   display: none;
@@ -402,12 +334,10 @@ footer {
   align-items: center;
   z-index: 2000;
 }
-
 .lightbox.active {
   display: flex;
   animation: fadeIn 0.3s ease-in-out;
 }
-
 .lightbox img {
   max-width: 95%;
   max-height: 90%;
@@ -417,34 +347,37 @@ footer {
   opacity: 0;
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
-
 .lightbox.active img {
   transform: scale(1);
   opacity: 1;
 }
-
-/* Botões */
 .lightbox-close, .lightbox-prev, .lightbox-next {
   position: absolute;
   color: #fff;
   font-size: 2.5rem;
   font-weight: bold;
   cursor: pointer;
-  user-select: none;
   transition: 0.3s;
 }
-
 .lightbox-close { top: 20px; right: 30px; }
 .lightbox-prev { left: 40px; top: 50%; transform: translateY(-50%); }
 .lightbox-next { right: 40px; top: 50%; transform: translateY(-50%); }
-
-.lightbox-close:hover, 
-.lightbox-prev:hover, 
-.lightbox-next:hover {
-  color: #00d9ff;
+.lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover {
+  color: #ff00c8;
 }
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+/* ====== FUNDO TECNOLÓGICO ====== */
+#bg-tech {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at top left, #0a0a0a, #000);
+}
+

@@ -9,10 +9,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
+  <div id="bg-tech"></div>
+
   <!-- ====== HEADER ====== -->
   <header>
     <nav>
-      <h1 class="logo">Jefferson França Teodoro</h1>
+      <h1 class="logo">Conquistas</h1>
 
       <!-- Botão menu -->
       <button class="menu-btn" id="menu-btn">
@@ -128,7 +130,43 @@
       lightboxImg.alt = certImages[currentIndex].alt;
       lightbox.classList.add('active');
        }
-
   </script>
+  <!-- Script Particles.js -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+  particlesJS("bg-tech", {
+    "particles": {
+      "number": { "value": 80 },
+      "color": { "value": "#00d9ff" },
+      "shape": { "type": "circle" },
+      "opacity": { "value": 0.5 },
+      "size": { "value": 3 },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#00d9ff",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 3
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": { "enable": true, "mode": "grab" },
+        "onclick": { "enable": true, "mode": "push" }
+      },
+      "modes": {
+        "grab": { "distance": 200, "line_linked": { "opacity": 0.7 } },
+        "push": { "particles_nb": 4 }
+      }
+    },
+    "retina_detect": true
+  });
+</script>
+
 </body>
 </html>
