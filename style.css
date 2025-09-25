@@ -115,7 +115,7 @@ header nav ul li a:hover {
   transition: 0.3s;
 }
 .btn-hero:hover {
-  background: linear-gradient(90deg, #00ff9d, #ff00c8);
+  background: linear-gradient(90deg, #00ff9d, #3d3595);
   color: #0a0a0a;
 }
 
@@ -203,7 +203,7 @@ h2 {
   box-shadow: 0 6px 15px rgba(0,0,0,0.6);
 }
 .projeto-card a:hover {
-  background: linear-gradient(90deg, #00ff9d, #ff00c8);
+  background: linear-gradient(90deg, #00ff9d, #00d9ff);
   color: #0a0a0a;
 }
 
@@ -288,7 +288,7 @@ form button {
   transition: 0.3s;
 }
 form button:hover {
-  background: linear-gradient(90deg, #00ff9d, #ff00c8);
+  background: linear-gradient(90deg, #00ff9d, #00d9ff);
   color: #0a0a0a;
 }
 
