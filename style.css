@@ -363,7 +363,7 @@ footer {
 .lightbox-prev { left: 40px; top: 50%; transform: translateY(-50%); }
 .lightbox-next { right: 40px; top: 50%; transform: translateY(-50%); }
 .lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover {
-  color: #ff00c8;
+  color: #ff0000;
 }
 @keyframes fadeIn {
   from { opacity: 0; }
