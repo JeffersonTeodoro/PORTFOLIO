@@ -16,9 +16,7 @@ Aqui você encontra meus projetos, habilidades e cursos de programação e tecno
 - **CSS3**
 - **JavaScript**
 - **Git & GitHub**
-- **React Native**
-- **Java**
-- **AWS**
+
 
 ---
 
@@ -32,6 +30,8 @@ Aqui você encontra meus projetos, habilidades e cursos de programação e tecno
 - **[Projeto Carros](https://github.com/JeffersonTeodoro/projeto-carros)**  
   Site para apresentação de modelos automotivos usando HTML e JavaScript.
 
+- **[Projeto-chess-system-java](https://github.com/JeffersonTeodoro/chess-system-java)**  
+  Chess System Java é um projeto desenvolvido com o objetivo de simular um jogo de xadrez completo em Java, rodando diretamente no console (terminal).
 ---
 
 ## 🎓 Cursos & Certificações
